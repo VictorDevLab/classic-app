@@ -1,37 +1,20 @@
 <template>
-  <p
-    v-bind:class="{
-      bold: true,
-      italic: true,
-      valid: isValid,
-      invalid: !isValid,
-    }"
-  >
-    Lorem ipsum dolor
-  </p>
+  <!-- <p>{{ thisInArrowFunc() }}</p> -->
+  <p>{{ username }}</p>
+  <button @click="changeName('whasdrdt')">Change Name</button>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      isValid: false,
+      username: "Obi-Wan Kenobi",
     };
+  },
+  methods: {
+    changeName(name) {
+      this.username = name;
+    },
   },
 };
 </script>
-
-<style>
-.bold {
-  font-weight: bolder;
-}
-.italic {
-  font-style: italic;
-}
-.valid {
-  color: forestgreen;
-}
-.invalid {
-  color: orangered;
-}
-</style>
